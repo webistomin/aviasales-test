@@ -1,6 +1,6 @@
 <template>
   <aside class="filters">
-    <div class="filters__block">
+    <div class="filters__block  filters__block--mb">
       <span class="filters__title">Валюта</span>
       <ul class="filters__list">
         <li class="filters__tab">
@@ -17,28 +17,28 @@
     <div class="filters__block">
       <span class="filters__title">Количество пересадок</span>
       <ul class="filters__list filters__list--column">
-        <li class="filters__item">
+        <li class="filters__item" tabindex="-1">
           <input type="checkbox" class="filters__checkbox" id="all">
-          <label for="all" class="filters__label">Все</label>
+          <label for="all" class="filters__label" tabindex="0">Все</label>
         </li>
         <li class="filters__item">
           <input type="checkbox" class="filters__checkbox" id="without-stops">
-          <label for="without-stops" class="filters__label">Без пересадок</label>
+          <label for="without-stops" class="filters__label" tabindex="0">Без пересадок</label>
           <button class="filters__button">Только</button>
         </li>
         <li class="filters__item">
           <input type="checkbox" class="filters__checkbox" id="one-stop">
-          <label for="one-stop" class="filters__label">1 пересадка</label>
+          <label for="one-stop" class="filters__label" tabindex="0">1 пересадка</label>
           <button class="filters__button">Только</button>
         </li>
         <li class="filters__item">
           <input type="checkbox" class="filters__checkbox" id="two-stops">
-          <label for="two-stops" class="filters__label">2 пересадки</label>
+          <label for="two-stops" class="filters__label" tabindex="0">2 пересадки</label>
           <button class="filters__button">Только</button>
         </li>
         <li class="filters__item">
           <input type="checkbox" class="filters__checkbox" id="three-stops">
-          <label for="three-stops" class="filters__label">3 пересадки</label>
+          <label for="three-stops" class="filters__label" tabindex="0">3 пересадки</label>
           <button class="filters__button">Только</button>
         </li>
       </ul>
@@ -57,6 +57,7 @@
     box-shadow: 0 1px 4px rgba(91, 137, 164, 0.25);
     padding-top: 15px;
     padding-left: 15px;
+    padding-bottom: 13px;
 
     &__title {
       display: block;
@@ -126,7 +127,79 @@
     }
 
     &__block {
-      margin-bottom: 30px;
+      &--mb {
+        margin-bottom: 30px;
+      }
+    }
+
+    &__item {
+      display: flex;
+      margin-left: -15px;
+      padding-left: 15px;
+
+      &:hover {
+        background-color: #f1fcff;
+      }
+
+      &:hover .filters__button {
+        display: block;
+      }
+
+      &:hover .filters__label::before {
+        background-color: #f2fcff;
+        border-color: #2196f3;
+      }
+    }
+
+    &__checkbox {
+      display: none;
+    }
+
+    &__checkbox:checked + &__label::before {
+      background-image: url("../../static/icon-check.svg");
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+
+    &__label {
+      display: block;
+      width: 100%;
+      position: relative;
+      padding-left: 29px;
+      font-size: 13px;
+      line-height: 35px;
+      font-family: "Open Sans", Arial, sans-serif;
+      color: #4a4a4a;
+
+      &::before {
+        width: 19px;
+        height: 19px;
+        content: "";
+        position: absolute;
+        border-radius: 3px;
+        border: 1px solid #d2d5d6;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &:focus::before {
+        background-color: #f2fcff;
+        border-color: #2196f3;
+      }
+    }
+
+    &__button {
+      display: none;
+      padding-right: 14px;
+      height: 100%;
+      font-family: "Open Sans", Arial, sans-serif;
+      color: #2196f3;
+      font-size: 11px;
+      font-weight: 600;
+      line-height: 35px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
     }
 
 
