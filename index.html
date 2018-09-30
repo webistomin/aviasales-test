@@ -30,6 +30,13 @@
     <noscript>
       This is your fallback content in case JavaScript fails to load.
     </noscript>
+    <!-- this svg is a container for svg icons and should not appear on the page.
+To emphasise this I use inline style="display: none" -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+      <symbol id="icon-plane" width="13" height="13">
+        <path d="M793.5 209.6v-1.3l-5.47-3.25v-3.57a1 1 0 0 0-1.03-.98 1 1 0 0 0-1.03.98v3.57l-5.47 3.25v1.3l5.47-1.62v3.57l-1.36.98v.97l2.39-.65 2.4.65v-.97l-1.37-.98v-3.57z"/>
+      </symbol>
+    </svg>
     <div id="app"></div>
     <!-- Todo: only include in production -->
     <%= htmlWebpackPlugin.options.serviceWorkerLoader %>
