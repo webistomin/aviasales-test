@@ -1,5 +1,5 @@
 # Тестовое задание от Aviasales
-> Одностраничное приложения для просмотра фильмов с помощью The Movie Database API 
+> Страница выдачи билетов со множеством фильтров, настроек и, собственно, билетов
 
 [![Build status][travis-image]][travis-url] [![dependencies Status](https://david-dm.org/webistomin/aviasales-test/status.svg)](https://david-dm.org/webistomin/aviasales-test) [![Dependency status][dependency-image]][dependency-url] 
 
