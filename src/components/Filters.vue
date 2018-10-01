@@ -203,6 +203,10 @@
       letter-spacing: 0.5px;
       text-transform: uppercase;
       cursor: pointer;
+
+      &:hover {
+        color: #64b5f5;
+      }
     }
 
     @media (min-width: 900px) {

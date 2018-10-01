@@ -6,6 +6,7 @@
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
+    "server": "json-server --watch db.json",
     "start": "node build/dev-server.js",
     "build": "node build/build.js",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
@@ -13,6 +14,7 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "vue": "^2.5.2"
   },
   "devDependencies": {
@@ -48,6 +50,7 @@
     "html-webpack-plugin": "^2.30.1",
     "http-proxy-middleware": "^0.17.4",
     "inject-loader": "^3.0.1",
+    "json-server": "^0.14.0",
     "karma": "^1.7.1",
     "karma-coverage": "^1.1.1",
     "karma-mocha": "^1.3.0",

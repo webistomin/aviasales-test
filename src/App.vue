@@ -12,10 +12,17 @@
         <tickets></tickets>
       </div>
     </main>
+    <ul>
+      <li v-for="ticket of tickets">
+        {{ticket.destination_name}}
+        {{ticket.stops}}
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
+  import axios from 'axios';
   import Filters from './components/Filters';
   import Tickets from './components/Tickets';
 
@@ -24,6 +31,18 @@
     components: {
       Filters,
       Tickets,
+    },
+    data() {
+      return {
+        tickets: [],
+      };
+    },
+    mounted() {
+      axios
+        .get('http://localhost:3000/tickets')
+        .then((response) => {
+          this.tickets = response.data;
+        });
     },
   };
 </script>

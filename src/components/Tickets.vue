@@ -230,6 +230,10 @@
       &:focus {
         background-color: #ff8124;
       }
+
+      &:active {
+        opacity: 0.8;
+      }
     }
 
     &__info {
