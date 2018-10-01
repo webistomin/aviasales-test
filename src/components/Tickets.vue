@@ -4,11 +4,14 @@
       <li class="tickets__item"
           v-for="ticket of getTickets">
         <div class="tickets__actions">
-          <a href="#" class="tickets__link">
+          <a :href="getCompanyLink(ticket.carrier)"
+             target="_blank"
+             rel="noopener"
+             class="tickets__link">
             <picture>
               <img class="tickets__img" width="120" height="35"
                    :src="getCompanyLogotype(ticket.carrier)"
-                   :srcset="`${getCompanyLogotypeRetina(ticket.carrier)} 2x`"
+                   :srcset="`${getCompanyLogotype(ticket.carrier, true)} 2x`"
                    :alt="ticket.carrier">
             </picture>
           </a>
@@ -71,32 +74,47 @@
           2 :
           cases[(number % 10 < 5) ? number % 10 : 5]];
       },
-      getCompanyLogotype(company) {
-        switch (company) {
-          default:
-            return 'http://pics.avs.io/120/35/SU.png';
-          case 'SU':
-            return 'http://pics.avs.io/120/35/SU.png';
-          case 'TK':
-            return 'http://pics.avs.io/120/35/TK.png';
-          case 'S7':
-            return 'http://pics.avs.io/120/35/S7.png';
-          case 'BA':
-            return 'http://pics.avs.io/120/35/BA.png';
+      getCompanyLogotype(company, isRetina) {
+        if (isRetina) {
+          switch (company) {
+            default:
+              return 'http://pics.avs.io/120/35/SU@2x.png';
+            case 'SU':
+              return 'http://pics.avs.io/120/35/SU@2x.png';
+            case 'TK':
+              return 'http://pics.avs.io/120/35/TK@2x.png';
+            case 'S7':
+              return 'http://pics.avs.io/120/35/S7@2x.png';
+            case 'BA':
+              return 'http://pics.avs.io/120/35/BA@2x.png';
+          }
+        } else {
+          switch (company) {
+            default:
+              return 'http://pics.avs.io/120/35/SU.png';
+            case 'SU':
+              return 'http://pics.avs.io/120/35/SU.png';
+            case 'TK':
+              return 'http://pics.avs.io/120/35/TK.png';
+            case 'S7':
+              return 'http://pics.avs.io/120/35/S7.png';
+            case 'BA':
+              return 'http://pics.avs.io/120/35/BA.png';
+          }
         }
       },
-      getCompanyLogotypeRetina(company) {
+      getCompanyLink(company) {
         switch (company) {
           default:
-            return 'http://pics.avs.io/120/35/SU@2x.png';
+            return 'https://www.aviasales.ru/';
           case 'SU':
-            return 'http://pics.avs.io/120/35/SU@2x.png';
+            return 'https://www.aeroflot.ru/ru-ru';
           case 'TK':
-            return 'http://pics.avs.io/120/35/TK@2x.png';
+            return 'https://www.turkishairlines.com/';
           case 'S7':
-            return 'http://pics.avs.io/120/35/S7@2x.png';
+            return 'https://www.s7.ru/';
           case 'BA':
-            return 'http://pics.avs.io/120/35/BA@2x.png';
+            return 'https://www.britishairways.com';
         }
       },
     },
@@ -150,14 +168,17 @@
       border-radius: 5px;
       box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1), 0 1px 0 #d64d08;
       cursor: pointer;
+      transition: all .3s;
 
       &:hover,
       &:focus {
-        background-color: #ff8124;
+        background-color: #faa760;
+        transition: all .3s;
       }
 
       &:active {
-        opacity: 0.8;
+        background-color: #ff6d00;
+        box-shadow: inset 0 1px 0 0 #d64d08;
       }
     }
 
