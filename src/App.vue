@@ -109,4 +109,11 @@
     margin: 0 auto;
     max-width: 818px;
   }
+
+  @media (min-width: 900px) {
+    .container {
+      display: flex;
+      align-items: flex-start;
+    }
+  }
 </style>

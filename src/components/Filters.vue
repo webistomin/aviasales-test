@@ -58,6 +58,7 @@
     padding-top: 15px;
     padding-left: 15px;
     padding-bottom: 13px;
+    margin-bottom: 20px;
 
     &__title {
       display: block;
@@ -200,6 +201,17 @@
       line-height: 35px;
       letter-spacing: 0.5px;
       text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    @media (min-width: 900px) {
+      margin-right: 20px;
+      padding-right: 15px;
+
+      &__item {
+        margin-right: -15px;
+        padding-right: 15px;
+      }
     }
 
 
