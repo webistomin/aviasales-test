@@ -171,10 +171,11 @@
       line-height: 35px;
       font-family: "Open Sans", Arial, sans-serif;
       color: #4a4a4a;
+      outline: none;
 
       &::before {
-        width: 19px;
-        height: 19px;
+        width: 20px;
+        height: 20px;
         content: "";
         position: absolute;
         border-radius: 3px;
@@ -205,6 +206,8 @@
     }
 
     @media (min-width: 900px) {
+      box-sizing: border-box;
+      width: 232px;
       margin-right: 20px;
       padding-right: 15px;
 

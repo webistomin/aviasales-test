@@ -6,7 +6,7 @@
           <a href="#" class="tickets__link">
             <img src="https://pics.avs.io/120/35/TK@2x.png" alt="#" class="tickets__img" width="120" height="35">
           </a>
-          <button class="tickets__btn">Купить за
+          <button class="tickets__btn">Купить<br>за
             <span class="tickets__price">12&nbsp;032
               <span class="tickets__currency">P</span>
             </span>
@@ -42,10 +42,10 @@
           <a href="#" class="tickets__link">
             <img src="https://pics.avs.io/120/35/TK@2x.png" alt="#" class="tickets__img" width="120" height="35">
           </a>
-          <button class="tickets__btn">Купить за
-            <span class="tickets__price">12&nbsp;032&nbsp;
-                    <span class="tickets__currency">P</span>
-                  </span>
+          <button class="tickets__btn">Купить <br> за
+            <span class="tickets__price">12&nbsp;032
+              <span class="tickets__currency">P</span>
+            </span>
           </button>
         </div>
         <div class="tickets__info">
@@ -53,6 +53,7 @@
             <time class="tickets__time">09:25</time>
             <p class="tickets__address">
               <span class="tickets__code">VVO</span>
+              ,&nbsp;
               <span class="tickets__city">Владивосток</span>
             </p>
             <time class="tickets__date" datetime="09-10-2018">9 окт 2018, Пт</time>
@@ -65,6 +66,7 @@
             <time class="tickets__time">11:45</time>
             <p class="tickets__address">
               <span class="tickets__city">Тель-Авив</span>
+              ,&nbsp;
               <span class="tickets__code">TLV</span>
             </p>
             <time class="tickets__date" datetime="10-10-2018">10 окт 2018, Пт</time>
@@ -76,10 +78,10 @@
           <a href="#" class="tickets__link">
             <img src="https://pics.avs.io/120/35/TK@2x.png" alt="#" class="tickets__img" width="120" height="35">
           </a>
-          <button class="tickets__btn">Купить за
-            <span class="tickets__price">12&nbsp;032&nbsp;
-                    <span class="tickets__currency">P</span>
-                  </span>
+          <button class="tickets__btn">Купить <br> за
+            <span class="tickets__price">12&nbsp;032
+              <span class="tickets__currency">P</span>
+            </span>
           </button>
         </div>
         <div class="tickets__info">
@@ -87,6 +89,7 @@
             <time class="tickets__time">09:25</time>
             <p class="tickets__address">
               <span class="tickets__code">VVO</span>
+              ,&nbsp;
               <span class="tickets__city">Владивосток</span>
             </p>
             <time class="tickets__date" datetime="09-10-2018">9 окт 2018, Пт</time>
@@ -99,6 +102,7 @@
             <time class="tickets__time">11:45</time>
             <p class="tickets__address">
               <span class="tickets__city">Тель-Авив</span>
+              ,&nbsp;
               <span class="tickets__code">TLV</span>
             </p>
             <time class="tickets__date" datetime="10-10-2018">10 окт 2018, Пт</time>
@@ -110,10 +114,10 @@
           <a href="#" class="tickets__link">
             <img src="https://pics.avs.io/120/35/TK@2x.png" alt="#" class="tickets__img" width="120" height="35">
           </a>
-          <button class="tickets__btn">Купить за
-            <span class="tickets__price">12&nbsp;032&nbsp;
-                    <span class="tickets__currency">P</span>
-                  </span>
+          <button class="tickets__btn">Купить <br> за
+            <span class="tickets__price">12&nbsp;032
+              <span class="tickets__currency">P</span>
+            </span>
           </button>
         </div>
         <div class="tickets__info">
@@ -121,6 +125,7 @@
             <time class="tickets__time">09:25</time>
             <p class="tickets__address">
               <span class="tickets__code">VVO</span>
+              ,&nbsp;
               <span class="tickets__city">Владивосток</span>
             </p>
             <time class="tickets__date" datetime="09-10-2018">9 окт 2018, Пт</time>
@@ -133,6 +138,7 @@
             <time class="tickets__time">11:45</time>
             <p class="tickets__address">
               <span class="tickets__city">Тель-Авив</span>
+              ,&nbsp;
               <span class="tickets__code">TLV</span>
             </p>
             <time class="tickets__date" datetime="10-10-2018">10 окт 2018, Пт</time>
@@ -144,10 +150,10 @@
           <a href="#" class="tickets__link">
             <img src="https://pics.avs.io/120/35/TK@2x.png" alt="#" class="tickets__img" width="120" height="35">
           </a>
-          <button class="tickets__btn">Купить за
-            <span class="tickets__price">12&nbsp;032&nbsp;
-                    <span class="tickets__currency">P</span>
-                  </span>
+          <button class="tickets__btn">Купить <br> за
+            <span class="tickets__price">12&nbsp;032
+              <span class="tickets__currency">P</span>
+            </span>
           </button>
         </div>
         <div class="tickets__info">
@@ -155,6 +161,7 @@
             <time class="tickets__time">09:25</time>
             <p class="tickets__address">
               <span class="tickets__code">VVO</span>
+              ,&nbsp;
               <span class="tickets__city">Владивосток</span>
             </p>
             <time class="tickets__date" datetime="09-10-2018">9 окт 2018, Пт</time>
@@ -167,6 +174,7 @@
             <time class="tickets__time">11:45</time>
             <p class="tickets__address">
               <span class="tickets__city">Тель-Авив</span>
+              ,&nbsp;
               <span class="tickets__code">TLV</span>
             </p>
             <time class="tickets__date" datetime="10-10-2018">10 окт 2018, Пт</time>
@@ -210,7 +218,7 @@
       padding: 10px;
       font-family: "Open Sans", Arial, sans-serif;
       font-size: 12px;
-      font-weight: 600;
+      font-weight: 400;
       letter-spacing: 0.5px;
       color: #ffffff;
       background-color: #ff6d00;
@@ -218,7 +226,8 @@
       box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1), 0 1px 0 #d64d08;
       cursor: pointer;
 
-      &:hover {
+      &:hover,
+      &:focus {
         background-color: #ff8124;
       }
     }
@@ -239,10 +248,10 @@
     &__address {
       display: flex;
       font-size: 10px;
-      line-height: 18px;
       font-family: "Open Sans", Arial, sans-serif;
       font-weight: 600;
       color: #4a4a4a;
+      padding-top: 8px;
     }
 
     &__city {
@@ -272,7 +281,7 @@
         background-color: #d2d5d6;
         content: "";
         position: absolute;
-        bottom: -6px;
+        bottom: -8px;
         left: -18px;
       }
 
@@ -283,7 +292,7 @@
         position: absolute;
         background-image: url("../../static/icon-plane.svg");
         transform: rotate(90deg);
-        bottom: -11px;
+        bottom: -13px;
         right: -26px
       }
     }
@@ -300,7 +309,7 @@
 
     @media (min-width: 480px) {
       &__time {
-        font-size: 36px;
+        font-size: 32px;
       }
 
       &__address {
@@ -314,8 +323,6 @@
       &__btn {
         padding-top: 6px;
         padding-bottom: 6px;
-        padding-left: 36px;
-        padding-right: 36px;
         font-size: 16px;
       }
     }
