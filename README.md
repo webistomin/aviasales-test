@@ -1,5 +1,5 @@
 # Тестовое задание от Aviasales
-> Страница выдачи билетов со множеством фильтров, настроек и, собственно, билетов
+> Страница выдачи билетов с различными фильтрами
 
 [![Build status][travis-image]][travis-url] [![dependencies Status](https://david-dm.org/webistomin/aviasales-test/status.svg)](https://david-dm.org/webistomin/aviasales-test) [![Dependency status][dependency-image]][dependency-url] 
 

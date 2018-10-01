@@ -5,7 +5,12 @@
           v-for="ticket of getTickets">
         <div class="tickets__actions">
           <a href="#" class="tickets__link">
-            <img src="https://pics.avs.io/120/35/TK@2x.png" alt="#" class="tickets__img" width="120" height="35">
+            <picture>
+              <img class="tickets__img" width="120" height="35"
+                   :src="getCompanyLogotype(ticket.carrier)"
+                   :srcset="`${getCompanyLogotypeRetina(ticket.carrier)} 2x`"
+                   :alt="ticket.carrier">
+            </picture>
           </a>
           <button class="tickets__btn">Купить<br>за
             <span class="tickets__price">
@@ -65,6 +70,34 @@
         return word[(number % 100 > 4 && number % 100 < 20) ?
           2 :
           cases[(number % 10 < 5) ? number % 10 : 5]];
+      },
+      getCompanyLogotype(company) {
+        switch (company) {
+          default:
+            return 'http://pics.avs.io/120/35/SU.png';
+          case 'SU':
+            return 'http://pics.avs.io/120/35/SU.png';
+          case 'TK':
+            return 'http://pics.avs.io/120/35/TK.png';
+          case 'S7':
+            return 'http://pics.avs.io/120/35/S7.png';
+          case 'BA':
+            return 'http://pics.avs.io/120/35/BA.png';
+        }
+      },
+      getCompanyLogotypeRetina(company) {
+        switch (company) {
+          default:
+            return 'http://pics.avs.io/120/35/SU@2x.png';
+          case 'SU':
+            return 'http://pics.avs.io/120/35/SU@2x.png';
+          case 'TK':
+            return 'http://pics.avs.io/120/35/TK@2x.png';
+          case 'S7':
+            return 'http://pics.avs.io/120/35/S7@2x.png';
+          case 'BA':
+            return 'http://pics.avs.io/120/35/BA@2x.png';
+        }
       },
     },
     computed: {
