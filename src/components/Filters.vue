@@ -3,14 +3,14 @@
     <div class="filters__block  filters__block--mb">
       <span class="filters__title">Валюта</span>
       <ul class="filters__list">
-        <li class="filters__tab">
-          <button class="filters__btn filters__btn--active">Rub</button>
-        </li>
-        <li class="filters__tab">
-          <button class="filters__btn">Usd</button>
-        </li>
-        <li class="filters__tab">
-          <button class="filters__btn">Eur</button>
+        <li class="filters__tab"
+            v-for="tab of tabs"
+            :key="tab">
+          <button class="filters__btn"
+                  :class="{ 'filters__btn--active': currentTab === tab }"
+                  v-on:click="setTab(tab)">
+            {{tab}}
+          </button>
         </li>
       </ul>
     </div>
@@ -47,7 +47,21 @@
 </template>
 
 <script>
-
+  export default {
+    data() {
+      return {
+        tabs: ['rub', 'usd', 'eur'],
+        currentTab: 'rub',
+        isActive: false,
+      };
+    },
+    methods: {
+      setTab(tab) {
+        this.currentTab = tab;
+        this.$store.commit('updateCurrentCurrency', tab);
+      },
+    },
+  };
 </script>
 
 <style scoped lang="less">
@@ -113,9 +127,9 @@
       text-transform: uppercase;
       letter-spacing: 0.5px;
       color: #2196f3;
+      cursor: pointer;
 
-      &:hover,
-      &:focus {
+      &:hover {
         color: #2196f3;
         background-color: #f2fcff;
         border-radius: inherit;
@@ -124,6 +138,11 @@
       &--active {
         color: #ffffff;
         background-color: #2196f3;
+
+        &:hover {
+          color: #ffffff;
+          background-color: #2196f3;
+        }
       }
     }
 

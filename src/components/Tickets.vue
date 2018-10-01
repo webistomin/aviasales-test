@@ -6,7 +6,7 @@
         <div class="tickets__actions">
           <a :href="getCompanyLink(ticket.carrier)"
              target="_blank"
-             rel="noopener"
+             rel="noopener nofollow"
              class="tickets__link">
             <picture>
               <img class="tickets__img" width="120" height="35"
@@ -17,7 +17,7 @@
           </a>
           <button class="tickets__btn">Купить<br>за
             <span class="tickets__price">
-              {{ticket.price}}
+              {{getPriceInCurrency(ticket.price)}}
               <span class="tickets__currency">₽</span>
             </span>
           </button>
@@ -66,6 +66,7 @@
     },
     mounted() {
       this.$store.dispatch('getTicketsFromServer');
+      this.$store.dispatch('getCurrencyRate');
     },
     methods: {
       getCorrectWordEnding(number, word) {
@@ -116,6 +117,13 @@
           case 'BA':
             return 'https://www.britishairways.com';
         }
+      },
+      getPriceInCurrency(price) {
+        const rates = this.$store.getters.getRates;
+        const currentCurrency = this.$store.getters.getCurrentCurrency;
+        console.log(currentCurrency);
+        console.log(rates);
+        return price;
       },
     },
     computed: {
