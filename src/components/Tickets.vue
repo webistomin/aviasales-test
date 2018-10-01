@@ -1,183 +1,45 @@
 <template>
   <section class="tickets">
     <ul class="tickets__list">
-      <li class="tickets__item">
+      <li class="tickets__item"
+          v-for="ticket of getTickets">
         <div class="tickets__actions">
           <a href="#" class="tickets__link">
             <img src="https://pics.avs.io/120/35/TK@2x.png" alt="#" class="tickets__img" width="120" height="35">
           </a>
           <button class="tickets__btn">Купить<br>за
-            <span class="tickets__price">12&nbsp;032
-              <span class="tickets__currency">P</span>
+            <span class="tickets__price">
+              {{ticket.price}}
+              <span class="tickets__currency">₽</span>
             </span>
           </button>
         </div>
         <div class="tickets__info">
           <div class="tickets__block">
-            <time class="tickets__time">09:25</time>
+            <time class="tickets__time">{{ticket.departure_time}}</time>
             <p class="tickets__address">
-              <span class="tickets__code">VVO</span>
+              <span class="tickets__code">{{ticket.origin}}</span>
               ,&nbsp;
-              <span class="tickets__city">Владивосток</span>
+              <span class="tickets__city">{{ticket.origin_name}}</span>
             </p>
-            <time class="tickets__date" datetime="09-10-2018">9 окт 2018, Пт</time>
+            <time class="tickets__date" datetime="09-10-2018">
+              {{ticket.departure_date | formatDate}}
+            </time>
           </div>
           <div class="tickets__stops">
             <p class="tickets__text">
-              <span class="tickets__counter">1</span>&nbsp;пересадка</p>
+              <span class="tickets__counter">{{ticket.stops}}</span>&nbsp;{{getCorrectWordEnding(ticket.stops, ['пересадка', 'пересадки', 'пересадок'])}}</p>
           </div>
           <div class="tickets__block">
-            <time class="tickets__time">11:45</time>
+            <time class="tickets__time">{{ticket.arrival_time}}</time>
             <p class="tickets__address">
-              <span class="tickets__city">Тель-Авив</span>
+              <span class="tickets__city">{{ticket.destination_name}}</span>
               ,&nbsp;
-              <span class="tickets__code">TLV</span>
+              <span class="tickets__code">{{ticket.destination}}</span>
             </p>
-            <time class="tickets__date" datetime="10-10-2018">10 окт 2018, Пт</time>
-          </div>
-        </div>
-      </li>
-      <li class="tickets__item">
-        <div class="tickets__actions">
-          <a href="#" class="tickets__link">
-            <img src="https://pics.avs.io/120/35/TK@2x.png" alt="#" class="tickets__img" width="120" height="35">
-          </a>
-          <button class="tickets__btn">Купить <br> за
-            <span class="tickets__price">12&nbsp;032
-              <span class="tickets__currency">P</span>
-            </span>
-          </button>
-        </div>
-        <div class="tickets__info">
-          <div class="tickets__block">
-            <time class="tickets__time">09:25</time>
-            <p class="tickets__address">
-              <span class="tickets__code">VVO</span>
-              ,&nbsp;
-              <span class="tickets__city">Владивосток</span>
-            </p>
-            <time class="tickets__date" datetime="09-10-2018">9 окт 2018, Пт</time>
-          </div>
-          <div class="tickets__stops">
-            <p class="tickets__text">
-              <span class="tickets__counter">1</span>&nbsp;пересадка</p>
-          </div>
-          <div class="tickets__block">
-            <time class="tickets__time">11:45</time>
-            <p class="tickets__address">
-              <span class="tickets__city">Тель-Авив</span>
-              ,&nbsp;
-              <span class="tickets__code">TLV</span>
-            </p>
-            <time class="tickets__date" datetime="10-10-2018">10 окт 2018, Пт</time>
-          </div>
-        </div>
-      </li>
-      <li class="tickets__item">
-        <div class="tickets__actions">
-          <a href="#" class="tickets__link">
-            <img src="https://pics.avs.io/120/35/TK@2x.png" alt="#" class="tickets__img" width="120" height="35">
-          </a>
-          <button class="tickets__btn">Купить <br> за
-            <span class="tickets__price">12&nbsp;032
-              <span class="tickets__currency">P</span>
-            </span>
-          </button>
-        </div>
-        <div class="tickets__info">
-          <div class="tickets__block">
-            <time class="tickets__time">09:25</time>
-            <p class="tickets__address">
-              <span class="tickets__code">VVO</span>
-              ,&nbsp;
-              <span class="tickets__city">Владивосток</span>
-            </p>
-            <time class="tickets__date" datetime="09-10-2018">9 окт 2018, Пт</time>
-          </div>
-          <div class="tickets__stops">
-            <p class="tickets__text">
-              <span class="tickets__counter">1</span>&nbsp;пересадка</p>
-          </div>
-          <div class="tickets__block">
-            <time class="tickets__time">11:45</time>
-            <p class="tickets__address">
-              <span class="tickets__city">Тель-Авив</span>
-              ,&nbsp;
-              <span class="tickets__code">TLV</span>
-            </p>
-            <time class="tickets__date" datetime="10-10-2018">10 окт 2018, Пт</time>
-          </div>
-        </div>
-      </li>
-      <li class="tickets__item">
-        <div class="tickets__actions">
-          <a href="#" class="tickets__link">
-            <img src="https://pics.avs.io/120/35/TK@2x.png" alt="#" class="tickets__img" width="120" height="35">
-          </a>
-          <button class="tickets__btn">Купить <br> за
-            <span class="tickets__price">12&nbsp;032
-              <span class="tickets__currency">P</span>
-            </span>
-          </button>
-        </div>
-        <div class="tickets__info">
-          <div class="tickets__block">
-            <time class="tickets__time">09:25</time>
-            <p class="tickets__address">
-              <span class="tickets__code">VVO</span>
-              ,&nbsp;
-              <span class="tickets__city">Владивосток</span>
-            </p>
-            <time class="tickets__date" datetime="09-10-2018">9 окт 2018, Пт</time>
-          </div>
-          <div class="tickets__stops">
-            <p class="tickets__text">
-              <span class="tickets__counter">1</span>&nbsp;пересадка</p>
-          </div>
-          <div class="tickets__block">
-            <time class="tickets__time">11:45</time>
-            <p class="tickets__address">
-              <span class="tickets__city">Тель-Авив</span>
-              ,&nbsp;
-              <span class="tickets__code">TLV</span>
-            </p>
-            <time class="tickets__date" datetime="10-10-2018">10 окт 2018, Пт</time>
-          </div>
-        </div>
-      </li>
-      <li class="tickets__item">
-        <div class="tickets__actions">
-          <a href="#" class="tickets__link">
-            <img src="https://pics.avs.io/120/35/TK@2x.png" alt="#" class="tickets__img" width="120" height="35">
-          </a>
-          <button class="tickets__btn">Купить <br> за
-            <span class="tickets__price">12&nbsp;032
-              <span class="tickets__currency">P</span>
-            </span>
-          </button>
-        </div>
-        <div class="tickets__info">
-          <div class="tickets__block">
-            <time class="tickets__time">09:25</time>
-            <p class="tickets__address">
-              <span class="tickets__code">VVO</span>
-              ,&nbsp;
-              <span class="tickets__city">Владивосток</span>
-            </p>
-            <time class="tickets__date" datetime="09-10-2018">9 окт 2018, Пт</time>
-          </div>
-          <div class="tickets__stops">
-            <p class="tickets__text">
-              <span class="tickets__counter">1</span>&nbsp;пересадка</p>
-          </div>
-          <div class="tickets__block">
-            <time class="tickets__time">11:45</time>
-            <p class="tickets__address">
-              <span class="tickets__city">Тель-Авив</span>
-              ,&nbsp;
-              <span class="tickets__code">TLV</span>
-            </p>
-            <time class="tickets__date" datetime="10-10-2018">10 окт 2018, Пт</time>
+            <time class="tickets__date" datetime="10-10-2018">
+              {{ticket.arrival_date | formatDate}}
+            </time>
           </div>
         </div>
       </li>
@@ -186,7 +48,37 @@
 </template>
 
 <script>
+  import moment from 'moment';
 
+  export default {
+    data() {
+      return {
+
+      };
+    },
+    mounted() {
+      this.$store.dispatch('getTicketsFromServer');
+    },
+    methods: {
+      getCorrectWordEnding(number, word) {
+        const cases = [2, 0, 1, 1, 1, 2];
+        return word[(number % 100 > 4 && number % 100 < 20) ?
+          2 :
+          cases[(number % 10 < 5) ? number % 10 : 5]];
+      },
+    },
+    computed: {
+      getTickets() {
+        return this.$store.getters.getTickets;
+      },
+    },
+    filters: {
+      formatDate(value) {
+        moment.locale('ru');
+        return moment(String(value)).format('ll');
+      },
+    },
+  };
 </script>
 
 <style scoped lang="less">

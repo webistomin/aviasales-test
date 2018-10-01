@@ -22,7 +22,6 @@
 </template>
 
 <script>
-  import axios from 'axios';
   import Filters from './components/Filters';
   import Tickets from './components/Tickets';
 
@@ -37,13 +36,7 @@
         tickets: [],
       };
     },
-    mounted() {
-      axios
-        .get('http://localhost:3000/tickets')
-        .then((response) => {
-          this.tickets = response.data;
-        });
-    },
+    mounted() {},
   };
 </script>
 
