@@ -26,6 +26,10 @@
       <td>Запустить сборку, сервер и слежение за файлами</td>
     </tr>
      <tr>
+      <td><code>npm run server</code></td>
+      <td>Запустить фейковый сервер, который отдает JSON с билетами</td>
+    </tr>
+     <tr>
       <td><code>npm run build</code></td>
       <td>Собрать проект для продакшена</td>
     </tr>
@@ -66,6 +70,10 @@
     <tr>
        <td><a href="https://github.com/typicode/json-server">JSON-server</a></td>
        <td>Имитация работы сервера</td>
+    </tr>
+    <tr>
+       <td><a href="http://momentjs.com/">moment.js</a></td>
+       <td>Вывод даты в правильном формате</td>
     </tr>
   </tbody>
 </table>
