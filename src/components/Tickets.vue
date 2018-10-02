@@ -18,7 +18,8 @@
           <button class="tickets__btn">Купить<br>за
             <span class="tickets__price">
               {{getPriceInCurrency(ticket.price)}}
-              <span class="tickets__currency">₽</span>
+              <span class="tickets__currency"
+                    ref="currency">{{currency}}</span>
             </span>
           </button>
         </div>
@@ -61,12 +62,14 @@
   export default {
     data() {
       return {
-
+        currency: '',
       };
     },
     mounted() {
       this.$store.dispatch('getTicketsFromServer');
       this.$store.dispatch('getCurrencyRate');
+      this.currency = this.$refs.currency;
+      console.log(this.currency);
     },
     methods: {
       getCorrectWordEnding(number, word) {
@@ -121,9 +124,19 @@
       getPriceInCurrency(price) {
         const rates = this.$store.getters.getRates;
         const currentCurrency = this.$store.getters.getCurrentCurrency;
-        console.log(currentCurrency);
-        console.log(rates);
-        return price;
+        switch (currentCurrency) {
+          default:
+            return 'rub';
+          case 'rub':
+            this.currency = 'Р';
+            return price;
+          case 'usd':
+            this.currency = '$';
+            return (price / rates.RUB).toFixed(2);
+          case 'eur':
+            this.currency = '€';
+            return ((price / rates.RUB) * rates.EUR).toFixed(2);
+        }
       },
     },
     computed: {
