@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" ref="app">
     <header class="page-header" role="banner">
       <picture>
         <source type="image/webp" srcset="../static/logo@1x.webp 1x, ../static/logo@2x.webp 2x">
@@ -12,12 +12,6 @@
         <tickets></tickets>
       </div>
     </main>
-    <ul>
-      <li v-for="ticket of tickets">
-        {{ticket.destination_name}}
-        {{ticket.stops}}
-      </li>
-    </ul>
   </div>
 </template>
 
@@ -31,12 +25,6 @@
       Filters,
       Tickets,
     },
-    data() {
-      return {
-        tickets: [],
-      };
-    },
-    mounted() {},
   };
 </script>
 

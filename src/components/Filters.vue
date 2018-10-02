@@ -8,7 +8,8 @@
             :key="tab">
           <button class="filters__btn"
                   :class="{ 'filters__btn--active': currentTab === tab }"
-                  v-on:click="setTab(tab)">
+                  v-on:click="setTab(tab)"
+                  :disabled="checkedCheckboxes.length === 0">
             {{tab}}
           </button>
         </li>
@@ -101,7 +102,7 @@
   };
 </script>
 
-<style scoped lang="less">
+<style lang="less">
   .filters {
     border-radius: 5px;
     background-color: #ffffff;
@@ -215,7 +216,20 @@
     &__checkbox:checked + &__label::before {
       background-image: url("../../static/icon-check.svg");
       background-repeat: no-repeat;
+      -webkit-animation-name: MOVE-BG;
+      -webkit-animation-duration: 0.3s;
+      -webkit-animation-timing-function: linear;
+      -webkit-animation-iteration-count: 1;
       background-position: center center;
+    }
+
+    @-webkit-keyframes MOVE-BG {
+      from {
+        background-position: 50% -50%
+      }
+      to {
+        background-position: center center;
+      }
     }
 
     &__label {
@@ -261,7 +275,7 @@
       cursor: pointer;
 
       &:hover {
-        color: #64b5f5;
+        color: #ff6d00;
       }
     }
 
