@@ -2,7 +2,8 @@
   <section class="tickets">
     <ul class="tickets__list">
       <li class="tickets__item"
-          v-for="ticket of getTickets">
+          v-for="ticket of getTickets"
+          v-if="$store.getters.getCheckedCheckboxes.includes(ticket.stops)">
         <div class="tickets__actions">
           <a :href="getCompanyLink(ticket.carrier)"
              target="_blank"
@@ -69,7 +70,6 @@
       this.$store.dispatch('getTicketsFromServer');
       this.$store.dispatch('getCurrencyRate');
       this.currency = this.$refs.currency;
-      console.log(this.currency);
     },
     methods: {
       getCorrectWordEnding(number, word) {

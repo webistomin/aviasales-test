@@ -17,28 +17,23 @@
     <div class="filters__block">
       <span class="filters__title">Количество пересадок</span>
       <ul class="filters__list filters__list--column">
-        <li class="filters__item" tabindex="-1">
+        <li class="filters__item">
           <input type="checkbox" class="filters__checkbox" id="all">
-          <label for="all" class="filters__label" tabindex="0">Все</label>
+          <label for="all" class="filters__label" @click="setAllCheckboxes">Все</label>
         </li>
-        <li class="filters__item">
-          <input type="checkbox" class="filters__checkbox" id="without-stops">
-          <label for="without-stops" class="filters__label" tabindex="0">Без пересадок</label>
-          <button class="filters__button">Только</button>
-        </li>
-        <li class="filters__item">
-          <input type="checkbox" class="filters__checkbox" id="one-stop">
-          <label for="one-stop" class="filters__label" tabindex="0">1 пересадка</label>
-          <button class="filters__button">Только</button>
-        </li>
-        <li class="filters__item">
-          <input type="checkbox" class="filters__checkbox" id="two-stops">
-          <label for="two-stops" class="filters__label" tabindex="0">2 пересадки</label>
-          <button class="filters__button">Только</button>
-        </li>
-        <li class="filters__item">
-          <input type="checkbox" class="filters__checkbox" id="three-stops">
-          <label for="three-stops" class="filters__label" tabindex="0">3 пересадки</label>
+        <li class="filters__item"
+            v-for="checkbox of checkboxes">
+          <input type="checkbox"
+                 class="filters__checkbox"
+                 :id="checkbox.id"
+                 :value="checkbox.stops"
+                 v-model="checkedCheckboxes"
+                 >
+          <label :for="checkbox.id"
+                 class="filters__label"
+                 tabindex="0">
+            {{checkbox.name}}
+          </label>
           <button class="filters__button">Только</button>
         </li>
       </ul>
@@ -53,6 +48,28 @@
         tabs: ['rub', 'usd', 'eur'],
         currentTab: 'rub',
         isActive: false,
+        checkboxes: [
+          {
+            id: 'without-stops',
+            name: 'Без пересадок',
+            stops: 0,
+          },
+          {
+            id: 'one-stop',
+            name: '1 пересадка',
+            stops: 1,
+          },
+          {
+            id: 'two-stops',
+            name: '2 пересадки',
+            stops: 2,
+          },
+          {
+            id: 'three-stops',
+            name: '3 пересадки',
+            stops: 3,
+          },
+        ],
       };
     },
     methods: {
@@ -60,7 +77,25 @@
         this.currentTab = tab;
         this.$store.commit('updateCurrentCurrency', tab);
       },
+      setAllCheckboxes() {
+        this.$store.commit('updateCheckedCheckboxes', [0, 1, 2, 3]);
+      },
     },
+    computed: {
+      checkedCheckboxes: {
+        get() {
+          return this.$store.getters.getCheckedCheckboxes;
+        },
+        set(value) {
+          this.$store.commit('updateCheckedCheckboxes', value);
+        },
+      },
+    },
+    // watch: {
+    //   checkedCheckboxes(value) {
+    //     console.log(value);
+    //   },
+    // },
   };
 </script>
 
