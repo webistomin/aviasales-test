@@ -3,9 +3,7 @@
 
 [![Build status][travis-image]][travis-url] [![dependencies Status](https://david-dm.org/webistomin/aviasales-test/status.svg)](https://david-dm.org/webistomin/aviasales-test) [![Dependency status][dependency-image]][dependency-url] 
 
-При открытии приложения, отображается список билетов и фильтр к ним.
-
-При клике на чекбоксы, показываются билеты, которые соответствуют данным фильтрам.
+При открытии приложения, отображается список билетов и фильтр к ним. При клике на чекбоксы, показываются билеты, которые соответствуют данным фильтрам. Для отображения цен используется текущий курс доллара и евро, получаемый через API. Для вывода правильного формата даты используется moment.js
 
 <img src='search_preview.png'>
 
@@ -26,6 +24,10 @@
     <tr>
       <td><code>npm run dev</code></td>
       <td>Запустить сборку, сервер и слежение за файлами</td>
+    </tr>
+     <tr>
+      <td><code>npm run server</code></td>
+      <td>Запустить фейковый сервер, который отдает JSON с билетами</td>
     </tr>
      <tr>
       <td><code>npm run build</code></td>
@@ -68,6 +70,10 @@
     <tr>
        <td><a href="https://github.com/typicode/json-server">JSON-server</a></td>
        <td>Имитация работы сервера</td>
+    </tr>
+    <tr>
+       <td><a href="http://momentjs.com/">moment.js</a></td>
+       <td>Вывод даты в правильном формате</td>
     </tr>
   </tbody>
 </table>
