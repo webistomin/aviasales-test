@@ -20,7 +20,7 @@ export default {
   actions: {
     getTicketsFromServer({ commit }) {
       axios
-        .get('http://localhost:3000/tickets')
+        .get('https://my-json-server.typicode.com/webistomin/aviasales-test/tickets')
         .then((response) => {
           commit('saveTickets', response.data);
         });

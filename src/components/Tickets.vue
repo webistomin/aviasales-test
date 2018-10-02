@@ -82,15 +82,15 @@
         if (isRetina) {
           switch (company) {
             default:
-              return 'http://pics.avs.io/120/35/SU@2x.png';
+              return 'https://pics.avs.io/120/35/SU@2x.png';
             case 'SU':
-              return 'http://pics.avs.io/120/35/SU@2x.png';
+              return 'https://pics.avs.io/120/35/SU@2x.png';
             case 'TK':
-              return 'http://pics.avs.io/120/35/TK@2x.png';
+              return 'https://pics.avs.io/120/35/TK@2x.png';
             case 'S7':
-              return 'http://pics.avs.io/120/35/S7@2x.png';
+              return 'https://pics.avs.io/120/35/S7@2x.png';
             case 'BA':
-              return 'http://pics.avs.io/120/35/BA@2x.png';
+              return 'https://pics.avs.io/120/35/BA@2x.png';
           }
         } else {
           switch (company) {

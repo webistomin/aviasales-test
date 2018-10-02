@@ -1,6 +1,8 @@
 # Тестовое задание от Aviasales
 > Страница выдачи билетов с различными фильтрами
 
+https://aviasales-test-b5f54.firebaseapp.com/
+
 [![Build status][travis-image]][travis-url] [![dependencies Status](https://david-dm.org/webistomin/aviasales-test/status.svg)](https://david-dm.org/webistomin/aviasales-test) [![Dependency status][dependency-image]][dependency-url] 
 
 При открытии приложения, отображается список билетов и фильтр к ним. При клике на чекбоксы, показываются билеты, которые соответствуют данным фильтрам. Для отображения цен используется текущий курс доллара и евро, получаемый через API. Для вывода правильного формата даты используется moment.js
