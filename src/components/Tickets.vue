@@ -95,15 +95,15 @@
         } else {
           switch (company) {
             default:
-              return 'http://pics.avs.io/120/35/SU.png';
+              return 'https://pics.avs.io/120/35/SU.png';
             case 'SU':
-              return 'http://pics.avs.io/120/35/SU.png';
+              return 'https://pics.avs.io/120/35/SU.png';
             case 'TK':
-              return 'http://pics.avs.io/120/35/TK.png';
+              return 'https://pics.avs.io/120/35/TK.png';
             case 'S7':
-              return 'http://pics.avs.io/120/35/S7.png';
+              return 'https://pics.avs.io/120/35/S7.png';
             case 'BA':
-              return 'http://pics.avs.io/120/35/BA.png';
+              return 'https://pics.avs.io/120/35/BA.png';
           }
         }
       },
