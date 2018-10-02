@@ -18,7 +18,7 @@
       <span class="filters__title">Количество пересадок</span>
       <ul class="filters__list filters__list--column">
         <li class="filters__item">
-          <input type="checkbox" class="filters__checkbox" id="all">
+          <input type="checkbox" class="filters__checkbox" id="all" ref="allStops">
           <label for="all" class="filters__label" @click="setAllCheckboxes">Все</label>
         </li>
         <li class="filters__item"
@@ -34,7 +34,10 @@
                  tabindex="0">
             {{checkbox.name}}
           </label>
-          <button class="filters__button">Только</button>
+          <button class="filters__button"
+                  @click="setOnlyCurrentStops(checkbox.stops)">
+            Только
+          </button>
         </li>
       </ul>
     </div>
@@ -80,6 +83,10 @@
       setAllCheckboxes() {
         this.$store.commit('updateCheckedCheckboxes', [0, 1, 2, 3]);
       },
+      setOnlyCurrentStops(stops) {
+        this.$refs.allStops.checked = false;
+        this.$store.commit('updateCheckedCheckboxes', [stops]);
+      },
     },
     computed: {
       checkedCheckboxes: {
@@ -91,11 +98,6 @@
         },
       },
     },
-    // watch: {
-    //   checkedCheckboxes(value) {
-    //     console.log(value);
-    //   },
-    // },
   };
 </script>
 
